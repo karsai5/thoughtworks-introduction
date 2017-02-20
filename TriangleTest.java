@@ -14,12 +14,14 @@ public class TriangleTest {
     // used for checking output of System.out.println
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+    Triangle t;
 
     @Before
     public void setUpStreams() {
-        // create streams for checking output
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
+        // create new triangle
+        t = new Triangle();
+        // reset streams for checking output
+        resetStreams();
     }
 
     @After
@@ -29,11 +31,29 @@ public class TriangleTest {
         System.setErr(null);
     }
 
+    public void resetStreams() {
+        // create streams for checking output
+        System.setOut(new PrintStream(outContent));
+        System.setErr(new PrintStream(errContent));
+        outContent.reset();
+        errContent.reset();
+    }
+
     @Test
     public void print_single_asterisk() {
-        Triangle t = new Triangle();
         t.printAsterisk();
         assertEquals("*\n", outContent.toString());
+    }
+
+    @Test
+    public void print_horizontal_line() {
+        t.printVerticalLine(0);
+        assertEquals("\n", outContent.toString());
+
+        resetStreams();
+
+        t.printVerticalLine(8);
+        assertEquals("********\n", outContent.toString());
     }
 
 }
