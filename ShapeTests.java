@@ -78,4 +78,15 @@ public class ShapeTests {
         assertEquals("*\n**\n***\n", outContent.toString());
     }
 
+    @Test
+    public void print_isosceles_triangle() {
+        s.printIsoscelesTriangle(0);
+        assertEquals("", outContent.toString());
+
+        resetStreams(); // does this to get a frest system.out.println
+
+        s.printIsoscelesTriangle(3);
+        assertEquals("  *\n ***\n*****\n", outContent.toString());
+    }
+
 }

@@ -20,6 +20,12 @@ public class Shape {
         System.out.println();
     }
 
+    private void printHorizontalSpace(int i){
+        for (int x = 0; x < i; x++){
+            System.out.print(" ");
+        }
+    }
+
     public void printVerticalLine(int i) {
         for (int x = 0; x < i; x++){
             printAsterisk();
@@ -28,8 +34,15 @@ public class Shape {
 
     public void printRightTriangle(int i) {
         for (int x = 0; x < i; x++) {
-           printHorizontalLine(x+1);
+            printHorizontalLine(x + 1);
         }
+    }
+
+    public void printIsoscelesTriangle(int i) {
+       for (int x = 0; x < i; x++) {
+           printHorizontalSpace(i - x - 1);
+           printHorizontalLine(x * 2 + 1);
+       }
     }
 }
 
