@@ -1,3 +1,5 @@
+package main;
+
 /**
  * Created by linus on 20/2/17.
  */

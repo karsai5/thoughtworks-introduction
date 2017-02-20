@@ -1,3 +1,4 @@
+import main.PrimeFactors;
 import org.junit.*;
 
 import java.io.ByteArrayOutputStream;

@@ -1,3 +1,4 @@
+import main.Shape;
 import org.junit.*;
 
 import java.io.ByteArrayOutputStream;
