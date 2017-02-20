@@ -47,13 +47,35 @@ public class TriangleTest {
 
     @Test
     public void print_horizontal_line() {
-        t.printVerticalLine(0);
+        t.printHorizontalLine(0);
         assertEquals("\n", outContent.toString());
 
-        resetStreams();
+        resetStreams(); // does this to get a frest system.out.println
 
-        t.printVerticalLine(8);
+        t.printHorizontalLine(8);
         assertEquals("********\n", outContent.toString());
+    }
+
+    @Test
+    public void print_vertical_line() {
+        t.printVerticalLine(0);
+        assertEquals("", outContent.toString());
+
+        resetStreams(); // does this to get a frest system.out.println
+
+        t.printVerticalLine(3);
+        assertEquals("*\n*\n*\n", outContent.toString());
+    }
+
+    @Test
+    public void print_right_triangle() {
+        t.print_right_triangle(0);
+        assertEquals("", outContent.toString());
+
+        resetStreams(); // does this to get a frest system.out.println
+
+        t.print_right_triangle(3);
+        assertEquals("*\n**\n***\n", outContent.toString());
     }
 
 }
