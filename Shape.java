@@ -44,5 +44,29 @@ public class Shape {
            printHorizontalLine(x * 2 + 1);
        }
     }
+
+    public void printDiamond(int i) {
+        for (int x = 0; x < i; x++) {
+            printHorizontalSpace(i - x - 1);
+            printHorizontalLine(x * 2 + 1);
+        }
+        for (int x = i-2; x >= 0; x--) {
+            printHorizontalSpace(i - x - 1);
+            printHorizontalLine(x * 2 + 1);
+        }
+    }
+
+
+    public void printDiamondWithName(int i, String name) {
+        for (int x = 0; x < i-1; x++) {
+            printHorizontalSpace(i - x - 1);
+            printHorizontalLine(x * 2 + 1);
+        }
+        System.out.println(name);
+        for (int x = i-2; x >= 0; x--) {
+            printHorizontalSpace(i - x - 1);
+            printHorizontalLine(x * 2 + 1);
+        }
+    }
 }
 

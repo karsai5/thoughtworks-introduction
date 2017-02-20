@@ -89,4 +89,31 @@ public class ShapeTests {
         assertEquals("  *\n ***\n*****\n", outContent.toString());
     }
 
+    @Test
+    public void print_diamond() {
+        s.printDiamond(0);
+        assertEquals("", outContent.toString());
+
+        resetStreams(); // does this to get a frest system.out.println
+
+        s.printDiamond(3);
+        assertEquals("  *\n ***\n*****\n ***\n  *\n", outContent.toString());
+
+        resetStreams(); // does this to get a frest system.out.println
+
+        s.printDiamond(1);
+        assertEquals("*\n", outContent.toString());
+    }
+
+    @Test
+    public void print_diamond_with_name() {
+        s.printDiamondWithName(0,"Bill");
+        assertEquals("Bill\n", outContent.toString());
+
+        resetStreams(); // does this to get a frest system.out.println
+
+        s.printDiamondWithName(3, "Bill");
+        assertEquals("  *\n ***\nBill\n ***\n  *\n", outContent.toString());
+    }
+
 }
