@@ -10,7 +10,7 @@ import static junit.framework.TestCase.assertEquals;
  * Created by linus on 20/2/17.
  */
 
-public class TriangleTest {
+public class ShapeTests {
     // used for checking output of System.out.println
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -69,12 +69,12 @@ public class TriangleTest {
 
     @Test
     public void print_right_triangle() {
-        s.print_right_triangle(0);
+        s.printRightTriangle(0);
         assertEquals("", outContent.toString());
 
         resetStreams(); // does this to get a frest system.out.println
 
-        s.print_right_triangle(3);
+        s.printRightTriangle(3);
         assertEquals("*\n**\n***\n", outContent.toString());
     }
 

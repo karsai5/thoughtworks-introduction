@@ -26,7 +26,7 @@ public class Shape {
         }
     }
 
-    public void print_right_triangle(int i) {
+    public void printRightTriangle(int i) {
         for (int x = 0; x < i; x++) {
            printHorizontalLine(x+1);
         }
